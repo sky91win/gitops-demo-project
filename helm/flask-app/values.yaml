@@ -1,0 +1,6 @@
+image:
+  repository: yourdockerhub/gitops-demo
+  tag: latest
+service:
+  type: ClusterIP
+  port: 80
