@@ -2,5 +2,5 @@ image:
   repository: sky91win/gitops-demo
   tag: latest
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
