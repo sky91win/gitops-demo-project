@@ -1,15 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: flask-dev
+  name: gitops-demo
+  namespace: argocd
 spec:
+  project: default
+
   source:
-    repoURL: https://github.com/youruser/gitops-demo.git
-    path: helm/flask-app
+    repoURL: https://github.com/sky91win/gitops-demo-project.git
     targetRevision: main
+    path: helm/flask-app
+
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  project: default
+
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true

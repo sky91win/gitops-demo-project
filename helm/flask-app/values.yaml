@@ -1,5 +1,5 @@
 image:
-  repository: yourdockerhub/gitops-demo
+  repository: sky91win/gitops-demo
   tag: latest
 service:
   type: ClusterIP
